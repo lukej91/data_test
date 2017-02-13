@@ -8,7 +8,7 @@ class apple1(object):
   def __init__(self):
     self.df = pd.read_csv('data.csv',
 			names=['restaurant','product','quantity','price','currency','ordered_at'], 
-			parse_dates=[5])
+			parse_dates=[5], dayfirst = True)
 
     self.df['value'] = self.df['quantity'] * self.df['price']
     self.df['year'] = self.df['ordered_at'].dt.year
